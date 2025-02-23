@@ -11,7 +11,7 @@ test.describe('Test Case 1: Register User', () => {
       testUser = UserData.createUser();
     });
   });
-  test('Register User Then Delete User', async ({ page }) => {
+  test('Register User Then Delete', async ({ page }) => {
     await test.step('Navigate to the website', async () => {
       const homePage = new HomePage(page);
       await homePage.navigateTo();

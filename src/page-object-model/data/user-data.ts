@@ -41,6 +41,9 @@ export namespace UserData {
     if (code === 'US') {
       return 'United States';
     }
+    if (code === 'Canada') {
+      return 'Canada';
+    }
     throw new Error(`Country code ${code} not found`);
   }
   export function createUser(): User {

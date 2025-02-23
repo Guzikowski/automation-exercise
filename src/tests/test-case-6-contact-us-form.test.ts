@@ -11,7 +11,7 @@ test.describe('Test Case 6: Contact Us Form', () => {
       testUser = UserData.createUser();
     });
   });
-  test('Fill out Contact Us page', async ({ page }) => {
+  test('Fill out Contact Us page and submit', async ({ page }) => {
     await test.step('Navigate to the website', async () => {
       const homePage = new HomePage(page);
       await homePage.navigateTo();

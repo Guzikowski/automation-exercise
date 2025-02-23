@@ -5,18 +5,18 @@ import { AccountWorkflow } from 'page-object-model/workflows/account-workflow';
 
 let testUser: UserData.User;
 
-test.describe('Test Case 2: Login User with correct email and password', () => {
+test.describe('Test Case 3: Login User with incorrect email', () => {
   test.beforeEach(async () => {
     await test.step('Setup Test Data', async () => {
       testUser = UserData.createUser();
     });
   });
-  test('Register User, Log Out Then Log In User to Delete', async ({ page }) => {
+  test('Attempt to Login with Unregistered User', async ({ page }) => {
     await test.step('Navigate to the website', async () => {
       const homePage = new HomePage(page);
       await homePage.navigateTo();
     });
-    await test.step('Execute Log In User Workflow', async () => {
+    await test.step('Execute Incorrect Log In User Workflow', async () => {
       await AccountWorkflow.IncorrectLogIn(page, testUser);
     });
     await test.step('Cleanup Test Data', async () => {

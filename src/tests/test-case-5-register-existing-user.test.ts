@@ -11,7 +11,7 @@ test.describe('Test Case 5: Register User with existing email', () => {
       testUser = UserData.createUser();
     });
   });
-  test('Register User, Log Out Then Log In User to Delete', async ({ page }) => {
+  test('Register User, Log Out, Re-Register User Then Log In User to Delete', async ({ page }) => {
     await test.step('Navigate to the website', async () => {
       const homePage = new HomePage(page);
       await homePage.navigateTo();

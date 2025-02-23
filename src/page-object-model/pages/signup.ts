@@ -28,9 +28,6 @@ export class SignUpPage {
     const dayValue = birthDate.getDate().toString();
     const monthValue = birthDate.getMonth().toString();
     const yearValue = birthDate.getFullYear().toString();
-    console.log('Day: ', dayValue);
-    console.log('Month: ', monthValue);
-    console.log('Year: ', yearValue);
     await this.page.locator('#days').selectOption(dayValue);
     await this.page.locator('#months').selectOption(monthValue);
     await this.page.locator('#years').selectOption(yearValue);
