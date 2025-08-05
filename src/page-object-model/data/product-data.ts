@@ -68,7 +68,10 @@ export namespace ProductData {
     public product: Product;
 
     public get categoryDisplayText(): string {
-      return `Category: ${this.product.category}`;
+      const { category } = this.product;
+      const categoryData = getCategorySubCategoryById(category);
+
+      return categoryData ? `Category: ${categoryData.category} > ${categoryData.subCategory}` : `Category: ${category}`;
     }
     public get availabilityDisplayText(): string {
       return `Availability: ${this.product.availability}`;

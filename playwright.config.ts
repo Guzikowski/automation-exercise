@@ -34,9 +34,10 @@ export default defineConfig({
     extraHTTPHeaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     /* Capture Screenshots of tests */
     screenshot: {
-          mode: 'only-on-failure',
-          fullPage: true
-        },
+      mode: 'only-on-failure',
+      fullPage: true
+    },
+    ignoreHTTPSErrors: true,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-first-failure',
@@ -54,23 +55,26 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], 
+      use: {
+        ...devices['Desktop Chrome'],
         viewport: { width: 1920, height: 1080 },
       },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'],
+      use: {
+        ...devices['Desktop Firefox'],
         viewport: { width: 1920, height: 1080 },
-       },
+      },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'],
+      use: {
+        ...devices['Desktop Safari'],
         viewport: { width: 1920, height: 1080 },
-       },
+      },
     }
   ]
 });
